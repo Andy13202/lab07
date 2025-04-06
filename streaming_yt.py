@@ -1,11 +1,15 @@
-from pytube import YouTube
 import os
+from yt_dlp import YoutubeDL
 
 def play_video(url):
-    yt = YouTube(url)
-    video = yt.streams.get_highest_resolution()
-    play_url = video.url
-    os.system(f"mpv '{play_url}'")
+    ydl_opts = {
+        'format': 'best',
+        'noplaylist': True,
+    }
+    with YoutubeDL(ydl_opts) as ydl:
+        info_dict = ydl.extract_info(url, download=False)
+        video_url = info_dict['url']
+        os.system(f"mpv '{video_url}'")
 
 def main():
     # YouTube視頻URL
