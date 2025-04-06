@@ -4,7 +4,6 @@ cd lab07
 
 sudo apt update
 pip3 install youtube-dl --break-system-packages  安裝youtube-dl：輸入以下命令來安裝youtube-dl，這是一個命令行工具，用於從YouTube下載視頻。
-sudo apt-get install libav-tools
 youtube-dl --extract-audio --audio-format mp3 XXXXXX   XXXXX為任意youtube link
 
 sudo nano get_youtube
@@ -12,3 +11,16 @@ sudo chmod +x get_youtube
 sudo cp get_youtube /usr/local/bin/
 
 https://www.youtube.com/watch?v=6Q0Pd53mojY
+
+#!/bin/bash
+
+# 指定音频文件路径
+AUDIO_FILE="~/Music/your-audio-file.mp3"
+
+# 检查音频文件是否存在
+if [ -f "$AUDIO_FILE" ]; then
+    echo "正在播放：$AUDIO_FILE"
+    mpv "$AUDIO_FILE"  # 或者使用 vlc "$AUDIO_FILE"
+else
+    echo "音频文件未找到：$AUDIO_FILE"
+fi
