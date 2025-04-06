@@ -3,8 +3,8 @@ git clone https://github.com/Andy13202/lab07.git
 cd lab07
 
 sudo apt update
-pip3 install youtube-dl --break-system-packages  安裝youtube-dl：輸入以下命令來安裝youtube-dl，這是一個命令行工具，用於從YouTube下載視頻。
-youtube-dl --extract-audio --audio-format mp3 XXXXXX   XXXXX為任意youtube link
+pip3 install yt-dlp --break-system-packages 
+yt-dlp --extract-audio --audio-format mp3 https://www.youtube.com/watch?v=XXXXXX
 sudo apt-get install mpv  # 或 sudo apt-get install vlc
 nano play_music.sh
 chmod +x play_music.sh
