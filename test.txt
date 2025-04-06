@@ -10,10 +10,6 @@ nano play_music.sh
 chmod +x play_music.sh
 ./play_music.sh
 
-sudo nano get_youtube
-sudo chmod +x get_youtube
-sudo cp get_youtube /usr/local/bin/
-
 https://www.youtube.com/watch?v=6Q0Pd53mojY
 
 #!/bin/bash
