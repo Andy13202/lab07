@@ -5,6 +5,10 @@ cd lab07
 sudo apt update
 pip3 install youtube-dl --break-system-packages  安裝youtube-dl：輸入以下命令來安裝youtube-dl，這是一個命令行工具，用於從YouTube下載視頻。
 youtube-dl --extract-audio --audio-format mp3 XXXXXX   XXXXX為任意youtube link
+sudo apt-get install mpv  # 或 sudo apt-get install vlc
+nano play_music.sh
+chmod +x play_music.sh
+./play_music.sh
 
 sudo nano get_youtube
 sudo chmod +x get_youtube
