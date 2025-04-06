@@ -3,13 +3,12 @@ git clone https://github.com/Andy13202/lab07.git
 cd lab07
 
 sudo apt update
-sudo apt install youtube-dl    安裝youtube-dl：輸入以下命令來安裝youtube-dl，這是一個命令行工具，用於從YouTube下載視頻。
-sudo apt install mpv   MPV是一個輕量級的視頻播放器，支持各種格式的視頻文件。
-pip3 install youtube-dl pafy
-pip3 install keyboard
+pip3 install youtube-dl --break-system-packages  安裝youtube-dl：輸入以下命令來安裝youtube-dl，這是一個命令行工具，用於從YouTube下載視頻。
+sudo apt-get install libav-tools
+youtube-dl --extract-audio --audio-format mp3 XXXXXX   XXXXX為任意youtube link
 
-nano streaming_yt.py
-python3 streaming_yt.py
+sudo nano get_youtube
+sudo chmod +x get_youtube
+sudo cp get_youtube /usr/local/bin/
 
 https://www.youtube.com/watch?v=6Q0Pd53mojY
-
