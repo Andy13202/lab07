@@ -3,7 +3,8 @@ from yt_dlp import YoutubeDL
 
 def play_video(url):
     ydl_opts = {
-        'format': 'bestvideo+bestaudio/best',  # 获取最佳视频和最佳音频，或者最佳整体质量的流
+        # 选择兼容性较高的格式，确保音频和视频都能正常播放
+        'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]',
         'noplaylist': True,
         'geo_bypass': True,
         'http_headers': {
@@ -15,10 +16,17 @@ def play_video(url):
         if 'url' in info_dict:
             video_url = info_dict['url']  # 直接获取URL
         else:
-            # 如果顶层没有URL，从formats中选择一个URL
-            video_url = info_dict['formats'][0]['url']  # 选择第一个格式的URL
+            # 从最佳格式选择视频URL
+            video_url = None
+            for f in info_dict['formats']:
+                if f['ext'] == 'mp4' and ('acodec' in f and f['acodec'] != 'none'):
+                    video_url = f['url']
+                    break
 
-        os.system(f"mpv '{video_url}'")
+        if video_url:
+            os.system(f"mpv '{video_url}'")
+        else:
+            print("No suitable video format found.")
 
 def main():
     # YouTube视频URL
