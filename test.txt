@@ -3,7 +3,7 @@ git clone https://github.com/Andy13202/lab07.git
 cd lab07
 
 sudo apt update
-pip3 install yt-dlp --break-system-packages 
+pip install -U yt-dlp 
 yt-dlp --extract-audio --audio-format mp3 https://www.youtube.com/watch?v=XXXXXX
 sudo apt-get install mpv  # 或 sudo apt-get install vlc
 nano play_music.sh
