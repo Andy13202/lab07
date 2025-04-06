@@ -11,5 +11,5 @@ pip3 install keyboard
 nano streaming_yt.py
 python3 streaming_yt.py
 
-https://www.youtube.com/watch?v=zDxnjwKWZ9M
-https://www.youtube.com/watch?v=TKJYrQFrc5w
+https://www.youtube.com/watch?v=6Q0Pd53mojY
+
