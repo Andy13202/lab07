@@ -1,17 +1,21 @@
-import pafy
 import os
+from youtube_dl import YoutubeDL
 
-# YouTube視頻URL
-url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'  # 這裡放你要播放的YouTube視頻連結
+def play_video(url):
+    ydl_opts = {
+        'format': 'best',
+        'quiet': True,
+        'noplaylist': True,
+    }
+    with YoutubeDL(ydl_opts) as ydl:
+        info_dict = ydl.extract_info(url, download=False)
+        video_url = info_dict['formats'][0]['url']
+        os.system(f"mpv {video_url}")
 
-# 使用Pafy獲取視頻資訊
-video = pafy.new(url)
+def main():
+    # YouTube視頻URL
+    url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'  # 這裡放你要播放的YouTube視頻連結
+    play_video(url)
 
-# 獲取最佳品質的視頻流
-best = video.getbest()
-
-# 獲取視頻的URL
-play_url = best.url
-
-# 使用MPV播放器播放視頻
-os.system(f"mpv {play_url}")
+if __name__ == "__main__":
+    main()
