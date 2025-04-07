@@ -4,7 +4,10 @@ cd lab07
 
 sudo apt update
 pip3 install -U yt-dlp --break-system-packages
+
 yt-dlp --extract-audio --audio-format mp3 https://www.youtube.com/watch?v=XXXXXX
+yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]' -o '%(title)s.%(ext)s' [YouTube-Link]
+
 sudo apt-get install mpv  # 或 sudo apt-get install vlc
 nano play_music.sh
 chmod +x play_music.sh
@@ -14,13 +17,14 @@ https://www.youtube.com/watch?v=6Q0Pd53mojY
 
 #!/bin/bash
 
-# 指定音频文件路径
-AUDIO_FILE="~/Music/your-audio-file.mp3"
+# 视频文件的路径
+VIDEO_FILE="path/to/your/video.mp4"
 
-# 检查音频文件是否存在
-if [ -f "$AUDIO_FILE" ]; then
-    echo "正在播放：$AUDIO_FILE"
-    mpv "$AUDIO_FILE"  # 或者使用 vlc "$AUDIO_FILE"
+# 检查视频文件是否存在
+if [ -f "$VIDEO_FILE" ]; then
+    echo "正在播放：$VIDEO_FILE"
+    mpv "$VIDEO_FILE"  # 或使用 vlc "$VIDEO_FILE"
 else
-    echo "音频文件未找到：$AUDIO_FILE"
+    echo "视频文件未找到：$VIDEO_FILE"
 fi
+
