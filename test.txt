@@ -13,8 +13,8 @@ nano play_music.sh
 chmod +x play_music.sh
 ./play_music.sh
 
-https://www.youtube.com/watch?v=zDxnjwKWZ9M
-https://www.youtube.com/watch?v=6Q0Pd53mojY
+https://www.youtube.com/watch?v=zDxnjwKWZ9M  // 3秒影片 血流成河
+https://www.youtube.com/watch?v=6Q0Pd53mojY  // 約3分半 周杰倫的 夜曲 mv
 
 #!/bin/bash
 
