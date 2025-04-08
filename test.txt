@@ -3,13 +3,13 @@ yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]' -o '%(title)s.%(
 
 #!/bin/bash
 
-# 视频文件的路径
+# 影片文件的路径
 VIDEO_FILE="path/to/your/video.mp4"
 
-# 检查视频文件是否存在
+# 檢查影片文件是否存在
 if [ -f "$VIDEO_FILE" ]; then
     echo "正在播放：$VIDEO_FILE"
-    mplayer "$VIDEO_FILE"  # 或使用 vlc "$VIDEO_FILE"
+    mplayer "$VIDEO_FILE"
 else
-    echo "视频文件未找到：$VIDEO_FILE"
+    echo "影片文件未找到：$VIDEO_FILE"
 fi
