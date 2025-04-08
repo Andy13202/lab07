@@ -1,20 +1,5 @@
 
-git clone https://github.com/Andy13202/lab07.git
-cd lab07
-
-sudo apt update
-pip3 install -U yt-dlp --break-system-packages
-
-yt-dlp --extract-audio --audio-format mp3 https://www.youtube.com/watch?v=XXXXXX
 yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]' -o '%(title)s.%(ext)s' [YouTube-Link]
-
-sudo apt-get install mpv  # 或 sudo apt-get install vlc
-nano play_music.sh
-chmod +x play_music.sh
-./play_music.sh
-
-https://www.youtube.com/watch?v=zDxnjwKWZ9M  // 3秒影片 血流成河
-https://www.youtube.com/watch?v=6Q0Pd53mojY  // 約3分半 周杰倫的 夜曲 mv
 
 #!/bin/bash
 
@@ -24,9 +9,7 @@ VIDEO_FILE="path/to/your/video.mp4"
 # 检查视频文件是否存在
 if [ -f "$VIDEO_FILE" ]; then
     echo "正在播放：$VIDEO_FILE"
-    mpv "$VIDEO_FILE"  # 或使用 vlc "$VIDEO_FILE"
+    mplayer "$VIDEO_FILE"  # 或使用 vlc "$VIDEO_FILE"
 else
     echo "视频文件未找到：$VIDEO_FILE"
 fi
-
-ffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset fast -c:a aac -b:a 192k -ac 2 output.mp4
